@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+    <modules>
+        <Masto_News>
+            <version>0.1.0</version>
+        </Masto_News>
+    </modules>
+    <global>
+        <block>
+            <masto_news>
+                <class>Masto_News_Block</class>
+            </masto_news>
+        </block>
+        <helper>
+            <masto_news>
+                <class>Masto_News_Helper</class>
+            </masto_news>
+        </helper>
+        <models>
+            <masto_news>
+                <class>Masto_News_Model</class>
+                <resourceModel>masto_news_resource</resourceModel>
+            </masto_news>
+            <masto_news_resource>
+                <class>Masto_News_Model_Resource</class>
+                <entities>
+                    <category>
+                        <table>masto_news_category</table>
+                    </category>
+                    <story>
+                        <table>masto_news_story</table>
+                    </story>
+                </entities>
+            </masto_news_resource>
+        </models>
+        <resources>
+            <masto_news_setup>
+                <setup>
+                    <module>Masto_News</module>
+                </setup>
+            </masto_news_setup>
+        </resources>
+    </global>
+    <frontend>
+
+    </frontend>
+    <admin>
+
+    </admin>
+    <adminhtml>
+
+    </adminhtml>
+    <default>
+
+    </default>
+</config>
