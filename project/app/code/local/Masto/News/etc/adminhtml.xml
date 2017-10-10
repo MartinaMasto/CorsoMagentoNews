@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+    <menu>
+        <cms>
+            <children>
+                <masto_news>
+                    <title>News</title>
+                    <sort_order>90</sort_order>
+                    <children>
+                        <masto_news_category>
+                            <title>Categories</title>
+                            <sort_order>10</sort_order>
+                            <action>masto_news/adminhtml_category</action>
+                        </masto_news_category>
+                        <masto_news_story>
+                            <title>Stories</title>
+                            <sort_order>20</sort_order>
+                            <action>masto_news/adminhtml_story</action>
+                        </masto_news_story>
+                    </children>
+                </masto_news>
+            </children>
+        </cms>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <cms>
+                        <children>
+                            <masto_news translate="title">
+                                <title>Masto News</title>
+                                <sort_order>90</sort_order>
+                            </masto_news>
+                        </children>
+                    </cms>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <masto_news translate="title">
+                                        <title>Masto News</title>
+                                        <sort_order>100</sort_order>
+                                    </masto_news>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

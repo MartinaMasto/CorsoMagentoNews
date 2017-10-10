@@ -14,6 +14,23 @@ $category->setName('Think Open');
 $category->setStatus(true);
 $category->save();
 
-echo '<hr>eccomi<hr><pre>';
-
+//load the category
+$category = Mage::getModel('masto_news/category')->load(1);
+echo 'Category<hr>';
 Zend_Debug::dump($category);
+echo '<hr>';
+
+//create a story
+$story = Mage::getModel('masto_news/story');
+$story->setTitle('la mia storia');
+$story->setContent('Lorem ipsum');
+$story->setStatus(1);
+$story->setCategory($category);
+$story->save();
+
+
+echo '<hr>story<hr><pre>';
+Zend_Debug::dump($story);
+
+echo 'story<hr>';
+echo 'CategoryName = ' . $story->getCategory()->getName();

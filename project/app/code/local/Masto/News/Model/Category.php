@@ -23,8 +23,19 @@
 class Masto_News_Model_Category extends Mage_Core_Model_Abstract
 {
     /**
+     * $_eventPrefix
+     * @var string
+     */
+    protected $_eventPrefix = 'masto_news_category';
+    /**
+     * $_eventObject
+     * @var string
+     */
+    protected $_eventObject = 'category';
+    /**
      * _construct
      */
+
     protected function _construct()
     {
         $this-> _init('masto_news/category');

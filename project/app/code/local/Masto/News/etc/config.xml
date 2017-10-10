@@ -6,16 +6,16 @@
         </Masto_News>
     </modules>
     <global>
-        <block>
+        <blocks>
             <masto_news>
                 <class>Masto_News_Block</class>
             </masto_news>
-        </block>
-        <helper>
+        </blocks>
+        <helpers>
             <masto_news>
                 <class>Masto_News_Helper</class>
             </masto_news>
-        </helper>
+        </helpers>
         <models>
             <masto_news>
                 <class>Masto_News_Model</class>
@@ -42,13 +42,37 @@
         </resources>
     </global>
     <frontend>
-
+        <translate>
+            <modules>
+                <masto_news>
+                    <files>
+                        <default>Masto_News.csv</default>
+                    </files>
+                </masto_news>
+            </modules>
+        </translate>
     </frontend>
     <admin>
-
+        <routers>
+            <masto_news>
+                <use>admin</use>
+                <args>
+                    <module>Masto_News</module>
+                    <frontName>masto_news</frontName>
+                </args>
+            </masto_news>
+        </routers>
     </admin>
     <adminhtml>
-
+        <translate>
+            <modules>
+                <masto_news>
+                    <files>
+                        <default>Masto_News.csv</default>
+                    </files>
+                </masto_news>
+            </modules>
+        </translate>
     </adminhtml>
     <default>
 
