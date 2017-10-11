@@ -73,6 +73,13 @@
                 </masto_news>
             </modules>
         </translate>
+        <layout>
+            <updates>
+                <masto_news>
+                    <file>masto_news.xml</file>
+                </masto_news>
+            </updates>
+        </layout>
     </adminhtml>
     <default>
 

@@ -19,7 +19,8 @@ Mage_Adminhtml_Controller_Action
      */
     public function indexAction()
     {
-        echo 'eccomi'; die;
+        $this->loadLayout();
+        $this->renderLayout();
     }
 
     /**
