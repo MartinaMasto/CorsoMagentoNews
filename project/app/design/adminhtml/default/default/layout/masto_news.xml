@@ -2,7 +2,7 @@
 <layout>
     <masto_news_adminhtml_category_index>
         <reference name="content">
-            <block type="masto_"
+        <block type="masto_news/adminhtml_category"  name="masto_news.adminhtml.category.grid"/>
         </reference>
     </masto_news_adminhtml_category_index>
 </layout>
