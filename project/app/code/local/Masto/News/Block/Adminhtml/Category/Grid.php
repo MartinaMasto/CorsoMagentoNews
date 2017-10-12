@@ -73,9 +73,9 @@ class Masto_News_Block_Adminhtml_Category_Grid extends Mage_Adminhtml_Block_Widg
                 'index' => 'status',
                 'header' => $this->__('Status'),
                 'status' =>100,
-                'type' => 'options',
-                'option' => Mage::getModel('masto_news/source_status')->toOptionArray(),
-                'renderer' => 'masto_news/adminhtml_category_grid_renderer_status',
+                //'type' => 'options',
+                //'option' => Mage::getModel('masto_news/source_status')->toOptionArray(),
+                //'renderer' => 'masto_news/adminhtml_category_grid_renderer_status',
             )
         );
 

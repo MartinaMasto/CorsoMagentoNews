@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<layout>
+    <masto_news_list_index>
+        <reference name="content">
+            <block type="masto_news/story" name="masto_news.list" template="masto_news/list.phtml"/>
+        </reference>
+    </masto_news_list_index>
+</layout>

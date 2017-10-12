@@ -1,0 +1,22 @@
+<?php
+    $stories = $this->getStories();
+?>
+<h1><?php echo $this->__('Stories'); ?></h1>
+<?php if (!$stories->getSize()) : ?>
+    <p class="note-msg"><?php echo $this->__('There are no stories matching the selection.'); ?></p>
+ <?php else : ?>
+    <div>
+        <ul>
+            <?php /** @var Masto_News_Model_Story $stories */ ?>
+            <?php foreach($stories as $st) : ?>
+                <li>
+                    <div>
+                        <h2><?php echo $st->getTitle(); ?></h2>
+                        <p><?php echo $st->getContent() ; ?></p>
+                    </div>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+<?php endif ; ?>
+
