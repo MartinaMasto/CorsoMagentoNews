@@ -19,7 +19,78 @@ Mage_Adminhtml_Controller_Action
      */
     public function indexAction()
     {
-        echo 'eccomi'; die;
+        $this->loadLayout();
+        $this->renderLayout();
+    }
+
+    /**
+     * newAction
+     */
+    public function newAction()
+    {
+        $this->_forward('edit');
+    }
+    /**
+     * editAction
+     */
+    public function editAction()
+    {
+
+    }
+    /**
+     * saveAction
+     */
+    public function saveAction()
+    {
+        //prepare model
+        if ($this->getRequest()->getParam('category_id')) {
+            $model = Mage:: getModel('masto_news/category')->load($this->getRequest()->getParam/'category_id');
+        } else {
+            $model = Mage::getModel('masto_news/category')
+                ->load($this->getRequest()->getParam('category_id'));
+            if (!$model || !$model->getId()) {
+                Mage::getSingleton('adminhtml/session')
+                    ->addError($this->__('There was an error when loading the category'));
+                return $this->_redirect('*/*/');
+            } else{
+                $model = Mage::getModel('masto_news/category');
+            }
+
+            //verify code and name
+            if (!$this->getRequest()->getParam('code') || $this->getRequest()->getParam('name')) {
+                Mage::getSingleton('adminhtml/session')->addError($this->__('Some required fields are missing'));
+                return $this->_redirect('*/*/edit/', array('category_id'=>$this->getRequest()->getParam('category_id')));
+            }
+        }
+    }
+    /**
+     * deleteAction
+     */
+    public function  deleteAction()
+    {
+        //load object
+        $category = Mage::getModel('masto_news/category')->load($this->getRequest()
+            ->getParam('category_id'));
+
+        if (!$category || $category->getId()) {
+            Mage::getSingleton('adminhtml/session')
+                ->addError($this->__('There was an error when loading the category'));
+            return $this->_redirect('*/*/');
+        }
+
+        // delete the category
+        try {
+            $category->delete();
+        } catch (Exception $e) {
+            Mage::logException($e);
+            Mage::getSingleton('adminhtml/session')
+                ->addError($this->__('There was an error when deleting the category'));
+            return $this->_redirect('*/*/');
+        }
+
+        Mage::getSingleton('adminhtml/session')
+            ->addSuccess($this->__('There was successfully deleted'));
+        return $this->_redirect('*/*/');
     }
 
     /**
